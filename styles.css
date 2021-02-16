@@ -1,0 +1,96 @@
+@font-face {
+    src: url('./assets/jabjai_heavy.TTF');
+    font-family: funny;
+}
+@font-face {
+    src: url('./assets/FunnySports.ttf');
+    font-family: packaging;
+}
+
+.main {
+   max-width: 500px;
+   margin:auto;
+}
+
+.header {
+    background-color: #343A40;
+    height: 19em;
+    width: 32em;
+    background-image:  url("./assets/coindive.png");
+    background-repeat: no-repeat;
+   background-size: 496px 295px;
+   background-position: center;
+   border-top: 8px solid black;
+   border-left: 8px solid black;
+   border-right: 8px solid black;
+}
+
+.title {
+    font-family: funny;
+    font-size: 3em;
+    color: #55A838;
+    text-align: center;
+    padding-top: 4.8em;
+    text-shadow: 5px 6px black;
+}
+
+nav {
+    width: 32em;
+    height: 3em;
+}
+
+.info {
+    background-color: #343A40;
+    width: 32em;
+    height:22em;
+    border:8px solid black;
+    color:white;
+}
+
+.navbar {
+    color: green;
+    height: 3.5em;
+    border-top: 8px solid black;
+    border-left: 8px solid black;
+    border-right: 8px solid black;
+}
+
+Img {
+    height: 15em;
+    width: 15em;
+    padding-top: 1em;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    padding-top: 1em;
+}
+
+#chartDiv {
+    height: 23em;
+    margin-top: -2em;
+    text-align: center;
+    position: relative;
+    background-image: url(https://images.theconversation.com/files/306575/original/file-20191212-85367-1uu5emz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: 2em;
+}
+
+.background {
+  height:23em;
+  width:31em;
+  padding-top:1.5em;
+}
+
+.intro {
+    position: absolute;
+    top: 0;
+    padding-top: .6em;
+    padding-left: 1.2em;
+    color:#7A9EE5;
+    font-family: funny;
+    font-size: 3em;
+    text-shadow: 5px 6px black;
+}

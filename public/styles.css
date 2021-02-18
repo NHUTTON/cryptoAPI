@@ -76,12 +76,14 @@ h2 {
     background-repeat: no-repeat;
     background-position: left;
     background-position-y: 2em;
+    
 }
 
 .background {
   height:23em;
   width:31em;
   padding-top:1.5em;
+  
 }
 
 .intro {
@@ -93,4 +95,11 @@ h2 {
     font-family: funny;
     font-size: 3em;
     text-shadow: 5px 6px black;
+}
+
+#homeBtn {
+    background-color: #343A40;
+    height:2.5em;
+    border: 1px solid #28A745 ;
+    border-radius: 10%;
 }

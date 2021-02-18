@@ -10,11 +10,10 @@ const randomCrypto = document.querySelector('nav-link')
 const form = document.querySelector('form')
 const info = document.querySelector('.info')
 const searchTerm = document.querySelector('#searchTerm')
-const home = document.querySelector('.navbar-brand')
+const home = document.getElementById('#homeBtn')
 let results;
-let randomResults;
+let liveRates;
 
-home.addEventListener('click', fetchResults)
 
 function fetchResults() {
          fetch(`${baseURL}list?access_key=${key}`)
@@ -23,34 +22,11 @@ function fetchResults() {
       }) 
          .then(function(json){
             results = json.crypto
+            console.log(results)
    })
-
-//    let randomDisplay = results => {
-//       for(let stock in results){
-//       randomObject = results[stock]
-//       console.log(randomObject)
-      
-//       while (chartDiv.firstChild){
-//          chartDiv.removeChild(chartDiv.firstChild)
-//       }
-
-//       let randomStock= document.createElement('h2')
-//       let randomImage = document.createElement('img')
-    
-//       let randomS = randomObject.name
-//       let randomPic = randomObject.icon_url
-//       let randomSym = randomObject.symbol
-//       randomStock.textContent = `${randomS} {${randomSym}}`
-//       randomImage.src = randomPic
-
-//       chartDiv.appendChild(randomStock)
-//       chartDiv.appendChild(randomImage)
-//    }
-// }
-//    randomDisplay()
 }
-fetchResults();
 
+fetchResults();
 
 search.addEventListener('submit', displayResults)
 
@@ -61,13 +37,15 @@ function displayResults(e){
       chartDiv.removeChild(chartDiv.firstChild)
    }
    console.log(searchTerm.value)
-
+   
    for(let stock in results){
-   let currentObject = results[stock]
-   currentObject.name = currentObject.name.toLowerCase();
-   currentObject.symbol = currentObject.symbol.toLowerCase();
-   searchTerm.value = searchTerm.value.toLowerCase();
-   if (currentObject.name === searchTerm.value ||  currentObject.symbol === searchTerm.value){
+      let currentObject = results[stock]
+      currentObject.name = currentObject.name.toLowerCase();
+      currentObject.symbol = currentObject.symbol.toLowerCase();
+      searchTerm.value = searchTerm.value.toLowerCase();
+      
+  
+      if (currentObject.name === searchTerm.value ||  currentObject.symbol === searchTerm.value){
       let stockName = document.createElement('h2')
       let stockImg = document.createElement('img')
       let stockN = currentObject.name.toUpperCase()
@@ -77,9 +55,30 @@ function displayResults(e){
       stockImg.src = `${stockLogo}`
       chartDiv.appendChild(stockName)
       chartDiv.appendChild(stockImg)
-      console.log(results)
-      }
-      }
+         }
     }
+}
 
 
+    // function liveResults() {
+//    fetch(`${baseURL}live?access_key=${key}`)
+//    .then(function(liveResult){
+//    return liveResult.json()
+// }) 
+//    .then(function(liveJson){
+//       liveRates = liveJson.rates
+//       console.log(liveRates)
+//       return liveRates
+// })
+// }
+
+// liveResults();
+
+
+   // for (let ticker in liveRates) {
+   //    let currentPrice = liveRates[ticker]
+   //    let tickerText = document.createElement('h2')
+   //    if (searchTerm.value === currentPrice) {
+   //    tickerText.textContent = `${currentPrice}`
+   //    chartDiv.appendChild(tickerText)
+   //    }
